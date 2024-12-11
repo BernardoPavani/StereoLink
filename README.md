@@ -30,6 +30,6 @@ Ouvintes: Usuários que exploram e consomem as músicas disponíveis na platafor
 Administradores: Usuários com permissão para gerenciar o conteúdo da plataforma.
 
 
-📚 Tecnologias Utilizadas
+# 📚 Tecnologias Utilizadas
 Backend: Node.js, Express, MySql, Sequelize, Express, Cloudinary
 Frontend: React/Vue.js, Bootstrap
