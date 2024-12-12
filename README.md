@@ -31,6 +31,6 @@ Administradores: Usuários com permissão para gerenciar o conteúdo da platafor
 
 
 # 📚 Tecnologias Utilizadas
-- Backend: Express v4.16, Sequelize, Cloudinary
-- Frontend: React v18.2.0, Bootstrap;
-- Banco de dados: PostgreeSQL v15.7, Sequelize CLI
+- **Backend:** Express v4.16, Sequelize, Cloudinary
+- **Frontend:** React v18.2.0, Bootstrap;
+- **Banco de dados:** PostgreeSQL v15.7, Sequelize CLI
