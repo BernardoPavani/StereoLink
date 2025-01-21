@@ -11,11 +11,7 @@ CRUD de Álbum e Músicas:
 
 - Para Ouvintes
 Navegação e Busca: Pesquisar músicas filtrando por artista, faixa ou álbum.
-Exploração de Novos Talentos: Descobrir novos artistas independentes.
-
-Para Administradores
-- Gestão de Conteúdo: Aprovar, editar ou excluir álbuns e músicas da plataforma.
-- Moderação: Garantir que o conteúdo siga as políticas da plataforma.
+Exploração de Novos Talentos: Descobrir novos artistas independentes
 
 
 # 🔒 Segurança
@@ -27,7 +23,6 @@ Toda comunicação entre o frontend e o backend é criptografada para garantir a
 # 👥 Tipos de Usuários
 - Músicos: Usuários que criam álbuns e músicas.
 - Ouvintes: Usuários que exploram e consomem as músicas disponíveis na plataforma.
-Administradores: Usuários com permissão para gerenciar o conteúdo da plataforma.
 
 
 # 📚 Tecnologias Utilizadas
