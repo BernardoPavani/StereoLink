@@ -25,6 +25,12 @@ A Plataforma de Visibilidade para Novos Artistas é um sistema dedicado a músic
 - Administradores: Usuários com permissão para gerenciar o conteúdo da plataforma.
 
 # 📚 Tecnologias Utilizadas
+- **Frontend:** Ruby on Rails (Views)
+  - ERB (Embedded Ruby)
+  - SCSS/SASS para estilização
+  - JavaScript vanilla para interatividade
+  - Hotwire (Turbo e Stimulus) para funcionalidades dinâmicas
+  - Bootstrap para componentes de UI
 - **Backend:** Ruby on Rails (Arquitetura MVC)
 - **Banco de dados:** PostgreSQL v15.7
 
