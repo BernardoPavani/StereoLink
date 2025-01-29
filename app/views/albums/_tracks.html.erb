@@ -1,0 +1,9 @@
+<h2 class="text-3xl text-darkbrown mb-4 text-center">Faixas</h2>
+
+<div id="tracks">
+  <%= render album.tracks %>
+</div>
+
+<div class="flex justify-center">
+  <%= link_to "Adicionar faixa", new_track_path(album: album), class: "border p-4 hover:border-darkbrown rounded-lg text-lightbrown text-xl border-lightbrown hover:bg-lightbrown hover:text-darkbrown py-2 cursor-pointer bg-[#110A07]" %>
+</div>

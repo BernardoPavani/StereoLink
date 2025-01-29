@@ -1,0 +1,11 @@
+<div class="min-h-screen w-full p-8 flex flex-col items-center justify-center bg-[#31251b] uppercase tracking-widest relative">
+  <div class="flex absolute top-10 left-10">
+    <div>
+      <%= link_to "VOLTAR", albums_path, class: "border p-4 rounded-lg text-lightbrown text-xl border-lightbrown hover:bg-lightbrown hover:text-darkbrown py-2 cursor-pointer mb-16 bg-[#110A07]" %>
+    </div>
+  </div>
+
+  <div class="rounded-xl p-8 text-[#31251b] bg-lightbrown min-w-[400px]">
+    <%= render 'albums/tracks', album: @album %>
+  </div>
+</div>

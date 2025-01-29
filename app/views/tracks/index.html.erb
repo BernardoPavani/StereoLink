@@ -1,0 +1,148 @@
+<div class="w-full p-8 bg-[#31251b] flex justify-between tracking-widest uppercase">
+  <div class="flex flex-col">
+    <div class="flex">
+      <%= button_to sign_out_path, method: :delete, class: "border p-4 rounded-lg text-lightbrown text-xl border-lightbrown hover:bg-lightbrown hover:text-darkbrown py-2 cursor-pointer bg-[#110A07]", data: { turbo_confirm: "Deseja realmente sair?" } do %>
+        SAIR
+      <% end %>
+    </div>
+
+  </div>
+</div>
+<div class="shadow-sm shadow-black text-[#31251b] text-4xl uppercase bg-[#DED2C5] px-8 border-b border-[#31251b] py-1">
+  <h1 class="text-center">
+    O que você deseja escutar hoje?
+  </h1>
+</div>
+<div class="shadow-black text-[#31251b] text-4xl uppercase bg-[#DED2C5] px-8 border-b border-[#31251b] py-4">
+  <form action="<%= tracks_path %>" method="get" class="relative w-full max-w-screen-lg mx-auto">
+    <!-- Input com bordas arredondadas estilo 'pill' -->
+    <input
+      type="text"
+      name="query"
+      value="<%= params[:query] %>"
+      class="w-full py-3 pl-4 pr-12 text-2xl rounded-full border
+            focus:outline-none border-[#31251b]" 
+    />
+
+    <!-- Botão com a lupa, posicionado à direita dentro do input -->
+    <button
+      type="submit"
+      class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#31251b]"
+    >
+      <!-- Ícone de lupa (SVG) -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+        <path d="M10 2a8 8 0 014.906 14.324l5.385 5.385a1 1 0 01-1.414 1.414l-5.385-5.385A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
+      </svg>
+    </button>
+  </form>
+</div>
+
+<div class="min-h-screen flex flex-col bg-[#DED2C5] bg-darkbrown">
+  <div class="text-center">
+    <button  id="filterBtn" class="border p-4 rounded-lg text-lightbrown text-xl border-lightbrown hover:bg-lightbrown hover:text-darkbrown py-2 cursor-pointer my-8 bg-[#110A07]">
+      Filtrar
+    </button>
+  </div>
+  <div class="w-full max-w-screen-lg mx-auto">
+    <table class="w-full rounded-xl overflow-hidden">
+      <thead class="bg-[#C7BAAB]">
+        <tr>
+          <th class="px-6 py-4 text-2xl text-left">#</th>
+          <th class="px-6 py-4 text-2xl text-left">Artista</th>
+          <th class="px-6 py-4 text-2xl text-left">Album</th>
+        </tr>
+      </thead>
+
+      <tbody class="bg-lightbrown">
+        <% @tracks.each_with_index do |track, index| %>
+          <tr>
+            <td class="px-6 py-4 text-2xl"><%= index %></td>
+            <td class="px-6 py-4 text-2xl"><%= track.name %></td>
+            <td class="px-6 py-4 text-2xl"><%= track.album.title %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+
+<!-- Container do modal (fica escondido por padrão com "hidden") -->
+<div 
+  id="filterModal"
+  class="hidden fixed inset-0 flex items-center justify-center z-50 bg-black/10"
+>
+  <!-- Conteúdo do modal -->
+  <div class="bg-white p-6 rounded-md shadow-md w-full max-w-sm relative">
+    <h2 class="text-2xl font-bold mb-4">Filtrar</h2>
+    <!-- Botão de fechar no canto superior direito do modal -->
+    <button 
+      id="closeModalBtn"
+      class="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+    >
+      X
+    </button>
+    
+    <!-- Formulário de filtros -->
+    <%= form_tag tracks_path, method: :get, id: "genresForm" do %>
+      <!-- Campo hidden que receberá a string final -->
+      <%= hidden_field_tag :genres, "", id: "genresInput" %>
+      <%= hidden_field_tag :query, params[:query] %>
+
+      <% @genres.each do |genre| %>
+        <div class="mb-2">
+          <!-- Checkbox simples, sem name, pois vamos capturar via JS -->
+          <input
+            type="checkbox"
+            value="<%= genre.id %>"
+            id="genre_<%= genre.id %>"
+            class="genre-checkbox mr-2"
+          />
+          <label for="genre_<%= genre.id %>"><%= genre.name %></label>
+        </div>
+      <% end %>
+
+      <div class="mt-4">
+        <!-- Botão de submissão -->
+        <%= submit_tag "Filtrar", class: "px-4 py-2 bg-[#31251b] text-white rounded hover:bg-[#110A07]" %>
+      </div>
+    <% end %>
+  </div>
+
+  <script type="module">
+    // Captura o evento de submit do formulário
+    const genresForm = document.getElementById("genresForm");
+    const genresInput = document.getElementById("genresInput");
+
+    genresForm.addEventListener("submit", function(e) {
+      // Pega todos os checkboxes marcados
+      const checkedBoxes = document.querySelectorAll(".genre-checkbox:checked");
+      // Extrai os valores e transforma em array
+      const valuesArray = Array.from(checkedBoxes).map(cb => cb.value);
+      // Junta os valores em uma string separada por vírgulas
+      genresInput.value = valuesArray.join(",");
+      // Com isso, o form submete ?genres=1,2,3,4
+    });
+  </script>
+</div>
+
+<script type="module">
+  const filterBtn    = document.getElementById('filterBtn')
+  const filterModal  = document.getElementById('filterModal')
+  const closeModalBtn = document.getElementById('closeModalBtn')
+
+  // Ao clicar no botão "Filtrar", remove a classe "hidden" para exibir o modal
+  filterBtn.addEventListener('click', () => {
+    filterModal.classList.remove('hidden')
+  })
+
+  // Ao clicar no botão de fechar, adiciona a classe "hidden" para esconder o modal
+  closeModalBtn.addEventListener('click', () => {
+    filterModal.classList.add('hidden')
+  })
+
+  // (Opcional) Fechar o modal ao clicar no fundo, caso deseje
+  filterModal.addEventListener('click', (e) => {
+    if (e.target === filterModal) {
+      filterModal.classList.add('hidden')
+    }
+  })
+</script>

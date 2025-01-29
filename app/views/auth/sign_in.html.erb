@@ -1,0 +1,29 @@
+<div class="min-h-screen w-full p-8 flex flex-col items-center justify-center bg-[#31251b] uppercase tracking-widest relative">
+  <div class="rounded-xl p-8 text-[#31251b] bg-lightbrown min-w-[400px]">
+    <% flash.each do |key, value| %>
+      <div class="bg-red-500 p-4 text-white text-center mb-4">
+        <%= value %>
+      </div>
+    <% end %>
+    <h1 class="text-3xl text-darkbrown mb-4 text-center">
+      LOGIN
+    </h1>
+    <%= form_tag sign_in_path, method: :post do %>
+      <div>
+        <%= text_field_tag 'user[email]', '', placeholder: 'E-mail', class: 'px-4 py-2 border border-darkbrown text-darkbrown bg-lightbrown rounded-xl w-full text-xl mb-4', required: true %>
+      </div>
+
+      <div>
+        <%= password_field_tag 'user[password]', '', placeholder: 'Senha', class: 'px-4 py-2 border border-darkbrown text-darkbrown bg-lightbrown rounded-xl w-full text-xl mb-4', required: true %>
+      </div>
+
+      <div>
+        <%= submit_tag "login", class: 'w-full border p-4 rounded-lg text-[#DED2C5] text-lg border-[#DED2C5] hover:bg-[#DED2C5] hover:text-[#31251b] py-2 cursor-pointer bg-[#110A07] hover:border-[#110A07] mt-4' %>
+      </div>
+    <% end %>
+
+    <div class="flex items-center justify-center mt-4">
+      <%= link_to "CRIAR CONTA", sign_up_path, class: "text-darkbrown hover:opacity-60 cursor-pointer" %>
+    </div>
+  </div>
+</div>

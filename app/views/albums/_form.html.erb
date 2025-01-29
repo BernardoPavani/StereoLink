@@ -1,0 +1,53 @@
+<%= form_with(model: album) do |form| %>
+  <% if album.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
+
+      <ul>
+        <% album.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field :title, placeholder: 'Nome do album', class: 'px-4 py-2 border border-darkbrown text-darkbrown bg-lightbrown rounded-xl w-full text-xl uppercase mb-4', required: true %>
+  </div>
+
+  <div>
+    <%= form.text_area :description, placeholder: 'Descrição do album', class: 'px-4 py-2 border border-darkbrown text-darkbrown bg-lightbrown rounded-xl w-full text-xl uppercase mb-4', required: true %>
+  </div>
+
+  <div id="genre_checkboxes">
+    <% Genre.all.each do |genre| %>
+      <div class="mb-2">
+        <%= check_box_tag 'album[genre_ids][]', genre.id, album.genres.include?(genre), id: "genre_#{genre.id}", class: "genre-checkbox" %>
+        <%= label_tag "genre_#{genre.id}", genre.name %>
+      </div>
+    <% end %>
+  </div>
+  <p class="text-danger" id="genre_error" style="display: none;">Selecione pelo menos um gênero</p>
+
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div>
+    <%= form.submit "Confirmar", class: 'w-full border p-4 rounded-lg text-[#DED2C5] text-lg border-[#DED2C5] hover:bg-[#DED2C5] hover:text-[#31251b] py-2 cursor-pointer bg-[#110A07] hover:border-[#110A07] mt-4' %>
+  </div>
+<% end %>
+
+<script type="module">
+  console.log('Hello from the form script');
+  const form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const checkedOne = Array.from(checkboxes).some(x => x.checked);
+
+      if (!checkedOne) {
+        event.preventDefault();
+        const errorElement = document.getElementById('genre_error');
+        errorElement.style.display = 'block';
+      }
+    });
+</script>

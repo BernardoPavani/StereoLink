@@ -1,0 +1,27 @@
+<%= form_with(model: track) do |form| %>
+  <% if album.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(album.errors.count, "error") %> prohibited this track from being saved:</h2>
+
+      <ul>
+        <% album.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field :name, placeholder: 'Nome da faixa', class: 'px-4 py-2 border border-darkbrown text-darkbrown bg-lightbrown rounded-xl w-full text-xl uppercase mb-4', required: true %>
+  </div>
+
+  <div>
+    <%= form.text_field :link, placeholder: 'Link da faixa', class: 'px-4 py-2 border border-darkbrown text-darkbrown bg-lightbrown rounded-xl w-full text-xl uppercase mb-4', required: true %>
+  </div>
+
+  <%= form.hidden_field :album_id, value: album.id %>
+
+  <div>
+    <%= form.submit "Confirmar", class: 'w-full border p-4 rounded-lg text-[#DED2C5] text-lg border-[#DED2C5] hover:bg-[#DED2C5] hover:text-[#31251b] py-2 cursor-pointer bg-[#110A07] hover:border-[#110A07] mt-4' %>
+  </div>
+<% end %>

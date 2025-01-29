@@ -1,0 +1,20 @@
+<div id="<%= dom_id(track) %>" class="w-full py-4 bg-lightbrown text-darkbrown text-xl border-lightbrown">
+  <div class="flex justify-between">
+    <div class="flex">
+      <h1 class="text-2xl text-darkbrown">
+        <%= track.name %>
+      </h1>
+    </div>
+
+    <div class="flex justify-end">
+      <div class="flex">
+        <%= link_to edit_track_path(track, album: @album), class: "p-2" do %>
+          <%= image_tag 'pencil.svg', class: 'w-6 h-6' %>
+        <% end %>
+        <%= button_to track_path(track, album: @album), method: :delete, data: { turbo_confirm: "Você tem certeza?" }, class: "p-2" do %>
+          <%= image_tag 'trash.svg', class: 'w-6 h-6' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
