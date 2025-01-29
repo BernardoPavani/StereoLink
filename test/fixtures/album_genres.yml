@@ -1,0 +1,11 @@
+one:
+  album: one
+  genre: one
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
+
+two:
+  album: one
+  genre: two
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>

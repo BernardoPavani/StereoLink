@@ -78,17 +78,19 @@ class TracksController < ApplicationController
     
       if query.present? && genre_ids.present?
         Track
-          .joins(album: :genre)
+          .joins(album: { album_genres: :genre })
           .where("tracks.name ILIKE ?", "%#{query}%")
           .where(genres: { id: genre_ids })
+          .distinct
       elsif query.present?
         Track.where("tracks.name ILIKE ?", "%#{query}%")
       elsif genre_ids.present?
         Track
-          .joins(album: :genre)
+          .joins(album: { album_genres: :genre })
           .where(genres: { id: genre_ids })
+          .distinct
       else
         Track.all
       end
-    end    
+    end   
 end

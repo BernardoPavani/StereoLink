@@ -1,11 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  title: MyString
-  description: MyString
-  genre: one
+  title: "First Album"
+  description: "Descrição do primeiro álbum"
+  user: one
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
 
 two:
-  title: MyString
-  description: MyString
-  genre: two
+  title: "Second Album"
+  description: "Descrição do segundo álbum"
+  user: two
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>

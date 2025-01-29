@@ -1,11 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  name: MyString
-  link: MyString
+  name: "Track One"
+  link: "http://example.com/track_one.mp3"
   album: one
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
 
 two:
-  name: MyString
-  link: MyString
+  name: "Track Two"
+  link: "http://example.com/track_two.mp3"
   album: two
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
