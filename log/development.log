@@ -5628,3 +5628,38 @@ Processing by AuthController#sign_in as HTML
 Completed 200 OK in 168ms (Views: 114.6ms | ActiveRecord: 0.0ms | Allocations: 1868)
 
 
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE DATABASE "stereolink_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1069635912534610470)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1069635912534610470)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Eletronica"], ["LIMIT", 1]]
+  ↳ lib/tasks/genre_create.rake:8:in `block (3 levels) in <main>'
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Jazz"], ["LIMIT", 1]]
+  ↳ lib/tasks/genre_create.rake:8:in `block (3 levels) in <main>'
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Metal"], ["LIMIT", 1]]
+  ↳ lib/tasks/genre_create.rake:8:in `block (3 levels) in <main>'
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Pop"], ["LIMIT", 1]]
+  ↳ lib/tasks/genre_create.rake:8:in `block (3 levels) in <main>'
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Rock"], ["LIMIT", 1]]
+  ↳ lib/tasks/genre_create.rake:8:in `block (3 levels) in <main>'
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "MPB"], ["LIMIT", 1]]
+  ↳ lib/tasks/genre_create.rake:8:in `block (3 levels) in <main>'
+Started GET "/" for 172.18.0.1 at 2025-01-30 16:31:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AlbumsController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :authenticate! rendered or redirected
+Completed 302 Found in 187ms (ActiveRecord: 0.0ms | Allocations: 2648)
+
+
+Started GET "/sign_in" for 172.18.0.1 at 2025-01-30 16:31:44 +0000
+Processing by AuthController#sign_in as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering auth/sign_in.html.erb within layouts/application
+  Rendered auth/sign_in.html.erb within layouts/application (Duration: 16.4ms | Allocations: 1169)
+  Rendered layout layouts/application.html.erb (Duration: 1770.3ms | Allocations: 35541)
+Completed 200 OK in 2365ms (Views: 1859.2ms | ActiveRecord: 10.1ms | Allocations: 54404)
+
+
