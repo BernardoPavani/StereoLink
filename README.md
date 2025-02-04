@@ -7,15 +7,14 @@ Para Músicos Cadastro de Artista: Solicitação de cadastro como músico para o
 
 Para Ouvintes Navegação e Busca: Pesquisar músicas filtrando por artista, faixa ou álbum. Exploração de Novos Talentos: Descobrir novos artistas independentes.
 
-Para Administradores
 
-Gestão de Conteúdo: Aprovar, editar ou excluir álbuns e músicas da plataforma.
-Moderação: Garantir que o conteúdo siga as políticas da plataforma.
 🔒 Segurança
 Criptografia de Dados: Login e senha armazenados de forma criptografada no banco de dados. Toda comunicação entre o frontend e o backend é criptografada para garantir a segurança dos dados dos usuários.
+
 👥 Tipos de Usuários
 Músicos: Usuários que criam álbuns e músicas.
 Ouvintes: Usuários que exploram e consomem as músicas disponíveis na plataforma. Administradores: Usuários com permissão para gerenciar o conteúdo da plataforma.
+
 📚 Regras e Padrões para Uso do Git
 Commits
 Redigir mensagens de commit de forma clara e objetiva, empregando o gerúndio para indicar a ação realizada (ex.: "Adicionando suporte à funcionalidade Y").
@@ -26,6 +25,7 @@ Branches
 Realizar a integração de branches na branch "main" somente após a aprovação dos testes e validação das novas implementações.
 Criar branches específicas e bem identificáveis para correções urgentes, garantindo uma abordagem organizada para a resolução de problemas críticos.
 Sempre remover branches obsoletas após a conclusão e merge das alterações, evitando acúmulo desnecessário no repositório.
+
 📚 Tecnologias Utilizadas
 Frontend: Ruby on Rails (Views)
 ERB (Embedded Ruby)
@@ -35,6 +35,7 @@ Hotwire (Turbo e Stimulus) para funcionalidades dinâmicas
 Bootstrap para componentes de UI
 Backend: Ruby on Rails (Arquitetura MVC)
 Banco de dados: PostgreSQL v15.7
+
 💎 Boas Práticas Ruby/Rails
 Convenção sobre Configuração: Seguimos as convenções de nomenclatura do Rails
 DRY (Don't Repeat Yourself): Eliminação de código redundante através de:
