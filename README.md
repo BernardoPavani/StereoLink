@@ -16,15 +16,8 @@ Músicos: Usuários que criam álbuns e músicas.
 Ouvintes: Usuários que exploram e consomem as músicas disponíveis na plataforma. Administradores: Usuários com permissão para gerenciar o conteúdo da plataforma.
 
 📚 Regras e Padrões para Uso do Git
-Commits
-Redigir mensagens de commit de forma clara e objetiva, empregando o gerúndio para indicar a ação realizada (ex.: "Adicionando suporte à funcionalidade Y").
-Garantir que cada commit represente uma alteração isolada e coesa, sem misturar múltiplas modificações não relacionadas.
-Associar cada commit às issues correspondentes no backlog para manter o rastreamento adequado.
-Evitar commits genéricos, como "Ajustes" ou "Correções", fornecendo um contexto mais detalhado sobre a mudança.
-Branches
-Realizar a integração de branches na branch "main" somente após a aprovação dos testes e validação das novas implementações.
-Criar branches específicas e bem identificáveis para correções urgentes, garantindo uma abordagem organizada para a resolução de problemas críticos.
-Sempre remover branches obsoletas após a conclusão e merge das alterações, evitando acúmulo desnecessário no repositório.
+Commits: Redigir mensagens de commit de forma clara e objetiva, empregando o gerúndio para indicar a ação realizada (ex.: "Adicionando suporte à funcionalidade Y").Garantir que cada commit represente uma alteração isolada e coesa, sem misturar múltiplas modificações não relacionadas. Associar cada commit às issues correspondentes no backlog para manter o rastreamento adequado.Evitar commits genéricos, como "Ajustes" ou "Correções", fornecendo um contexto mais detalhado sobre a mudança.
+Branches: Realizar a integração de branches na branch "main" somente após a aprovação dos testes e validação das novas implementações. Criar branches específicas e bem identificáveis para correções urgentes, garantindo uma abordagem organizada para a resolução de problemas críticos. Sempre remover branches obsoletas após a conclusão e merge das alterações, evitando acúmulo desnecessário no repositório.
 
 📚 Tecnologias Utilizadas
 Frontend: Ruby on Rails (Views)
