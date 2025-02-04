@@ -20,13 +20,13 @@ A Plataforma de Visibilidade para Novos Artistas é um sistema dedicado a músic
 - Branches: Realizar a integração de branches na branch "main" somente após a aprovação dos testes e validação das novas implementações. Criar branches específicas e bem identificáveis para correções urgentes, garantindo uma abordagem organizada para a resolução de problemas críticos. Sempre remover branches obsoletas após a conclusão e merge das alterações, evitando acúmulo desnecessário no repositório.
 
 📚 Tecnologias Utilizadas
-- Frontend: Ruby on Rails (Views)
+- Frontend: Ruby on Rails 8.0.0 (Views)
 - ERB (Embedded Ruby)
-- SCSS/SASS para estilização
+- SCSS/SASS 1.49.9 para estilização
 - JavaScript vanilla para interatividade
-- Hotwire (Turbo e Stimulus) para funcionalidades dinâmicas
-- Bootstrap para componentes de UI
-- Backend: Ruby on Rails (Arquitetura MVC)
+- Hotwire (Turbo 2.0.11 e Stimulus  3.0.1) para funcionalidades dinâmicas
+- Bootstrap 5.1.3 para componentes de UI
+- Backend: Ruby on Rails  8.0.0 (Arquitetura MVC)
 - Banco de dados: PostgreSQL v15.7
 
 💎 Boas Práticas Ruby/Rails
